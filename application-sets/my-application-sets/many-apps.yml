@@ -12,7 +12,7 @@ spec:
       - path: application-sets/example-apps/*
   template:      
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path[1]}}'
     spec:
       # The project the application belongs to.
       project: default
@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{path[1]}}'
       
       # Destination cluster and namespace to deploy the application
       destination:
